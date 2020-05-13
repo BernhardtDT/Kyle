@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Employee-type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label for="description" position="floating">Description</ion-label>
+      <ion-input type="text" id="Description" name="Description"[(ngModel)]="newEmployeeType.empType_description"></ion-input>
+      <ion-button slot="start" type="submit" (click)="addEmployeeType()"><ion-icon name="add-outline"></ion-icon>Add</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="Description" position="floating">Description</ion-label>
+      <ion-input type="text" id="Description" name="DescriptionN"[(ngModel)]="editEmployeeType.empType_description"></ion-input>
+      <br>
+      <ion-label position="floating">EmployeeTypeID</ion-label>
+      <ion-input type="text" id="EmpTypeID" [(ngModel)]="editEmployeeType.empType_ID"></ion-input>
+
+      <ion-button slot="start" type="submit" (click)="updateEmployeeType()"><ion-icon name="add-outline"></ion-icon>Edit</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label for="EmployeeTypeId" position="floating">EmployeeTypeID</ion-label>
+      <ion-input type="text" id="ID" name="ID" [(ngModel)]="ID"></ion-input>
+      <ion-button slot="start" (click)="deleteEmployeeType()"><ion-icon name="trash-outline"></ion-icon>Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid *ngFor="let e of newEmployeeType">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>{{e.empType_description}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{e.empType_ID}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

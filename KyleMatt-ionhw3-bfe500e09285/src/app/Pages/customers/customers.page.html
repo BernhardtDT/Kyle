@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Customers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label for="Name" position="floating">Name</ion-label>
+      <ion-input type="text" id="Name" name="name" [(ngModel)]="newCustomer.cust_name"></ion-input>
+      <br>
+      <ion-label for="Surname" position="floating">Surname</ion-label>
+      <ion-input type="text" id="Surname" name="surname" [(ngModel)]="newCustomer.cust_surname"></ion-input>
+      <br>
+      <ion-label for="Number" position="floating">Number</ion-label>
+      <ion-input type="text" id="Number" name="number" [(ngModel)]="newCustomer.cust_num"></ion-input>
+      <ion-button slot="start" type="submit" (click)="addCustomer()"><ion-icon name="add-outline"></ion-icon>Add</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="Name" position="floating">Name</ion-label>
+      <ion-input type="text" id="Name" name="nameE" [(ngModel)]="editCustomer.cust_name"></ion-input>
+      <br>
+      <ion-label for="Surname" position="floating">Surname</ion-label>
+      <ion-input type="text" id="Surname" name="surnameE" [(ngModel)]="editCustomer.cust_surname" ></ion-input>
+      <br>
+      <ion-label for="Number" position="floating">Number</ion-label>
+      <ion-input type="text" id="Number" name="numberE" [(ngModel)]="editCustomer.cust_num"></ion-input>
+      <br>
+      <ion-label for="CustomerID" position="floating">CustomerID</ion-label>
+      <ion-input type="text" id="CustomerID" name="customerIDE" [(ngModel)]="editCustomer.cust_ID"></ion-input>
+      <ion-button slot="start" type="submit" (click)="updateCustomer()"><ion-icon name="add-outline"></ion-icon>Edit</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CustomerID</ion-label>
+      <ion-input type="text" id="ID" name="ID" [(ngModel)]="ID"></ion-input>
+      <ion-button slot="start"type="submit" (click)="deleteCustomers()"><ion-icon name="add-outline"></ion-icon>Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid *ngFor="let c of newCustomer">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>{{c.cust_name}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{c.cust_surname}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{c.cust_num}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{c.cust_ID}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

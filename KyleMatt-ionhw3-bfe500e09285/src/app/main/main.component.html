@@ -1,0 +1,36 @@
+
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Shoppy Shop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-app>
+<ion-list>
+  <ion-item></ion-item>
+  <ion-item>
+    <ion-label>Customers</ion-label>
+    <ion-button [routerLink]="['customers']">View</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Employee Type</ion-label>
+    <ion-button [routerLink]="['employee-type']">View</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Product Types</ion-label>
+    <ion-button [routerLink]="['product-type']">View</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Products</ion-label>
+    <ion-button [routerLink]="['/products']">View</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sales Employee</ion-label>
+    <ion-button [routerLink]="['/sales-employee']">View</ion-button>
+  </ion-item>
+</ion-list>
+</ion-app>
+
+<router-outlet></router-outlet>
+

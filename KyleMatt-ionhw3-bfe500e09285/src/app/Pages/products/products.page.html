@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label for="Productname" position="floating">Name</ion-label>
+      <ion-input type="text" id="Productname" name="ProductName" [(ngModel)]="newProduct.prod_name"></ion-input>
+      <br>
+      <ion-label for="ProductNum" position="floating">Number</ion-label>
+      <ion-input type="text" id="ProductNum" name="ProductNumber" [(ngModel)]="newProduct.prod_num"></ion-input>
+      <ion-button slot="start" type="submit" (click)="addProduct()"><ion-icon name="add-outline"></ion-icon>Add</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="Productname" position="floating">Name</ion-label>
+      <ion-input type="text" id="Productname" name="Name" [(ngModel)]="editProduct.prod_name"></ion-input>
+      <br>
+      <ion-label for="ProductNum" position="floating">Number</ion-label>
+      <ion-input type="text" id="ProductNum" name="Number" [(ngModel)]="editProduct.prod_num"></ion-input>
+      <br>
+      <ion-label for="ProductID" position="floating">ID</ion-label>
+      <ion-input type="text" id="ProductID" name="IDd" [(ngModel)]="editProduct.prod_ID"></ion-input>
+      <ion-button slot="start" type="submit" (click)="updateProduct()"><ion-icon name="add-outline"></ion-icon>Edit</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="ProductID" position="floating">ID</ion-label>
+      <ion-input type="text" id="ID" name="ID" [(ngModel)]="ID"></ion-input>
+      <ion-button slot="start"><ion-icon name="add-outline"></ion-icon>Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid *ngFor="let p of newProduct">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>{{p.prod_ID}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{p.prod_name}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{p.prod_num}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

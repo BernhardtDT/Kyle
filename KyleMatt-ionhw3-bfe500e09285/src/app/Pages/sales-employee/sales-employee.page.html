@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sales-employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label for="Employeename" position="floating">Name</ion-label>
+      <ion-input type="text" id="Employeename" name="EmpName" [(ngModel)]="newSaleEmployee.saleEmp_name"></ion-input>
+      <br>
+      <ion-label for="Employeesurname" position="floating">Surname</ion-label>
+      <ion-input type="text" id="Employeesurname" name="EmployeeSurname" [(ngModel)]="newSaleEmployee.saleEmp_surname"></ion-input>
+      <br>
+      <ion-label for="Employeeposition" position="floating">Position</ion-label>
+      <ion-input type="text" id="Employeeposition" name="EmployeePos" [(ngModel)]="newSaleEmployee.saleEmp_pos"></ion-input>
+      <ion-button slot="start" type="submit" (click)="addSaleEmp()"><ion-icon name="add-outline"></ion-icon>Add</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="EmployeeID" position="floating">ID</ion-label>
+      <ion-input type="text" id="EmployeeID" name="EmpID" [(ngModel)]="editSaleEmployee.saleEmp_ID"></ion-input>
+      <br>
+      <ion-label for="Employeename" position="floating">Name</ion-label>
+      <ion-input type="text" id="Employeename" name="Name" [(ngModel)]="editSaleEmployee.saleEmp_name"></ion-input>
+      <br>
+      <ion-label for="Employeesurname" position="floating">Surname</ion-label>
+      <ion-input type="text" type="text" id="Employeesurname" name="Surname" [(ngModel)]="editSaleEmployee.saleEmp_surname"></ion-input>
+      <br>
+      <ion-label for="Employeeposition" position="floating">Position</ion-label>
+      <ion-input type="text" id="Employeeposition" name="pos" [(ngModel)]="editSaleEmployee.saleEmp_pos"></ion-input>
+      <br>
+      <ion-button slot="start" type="submit" (click)="updateSaleEmp()"><ion-icon name="add-outline"></ion-icon>Edit</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="EmployeeID" position="floating">SaleEmpID</ion-label>
+      <ion-input type="text" id="ID" name="ID" [(ngModel)]="ID"></ion-input>
+      <ion-button slot="start" type="submit" (click)="deleteSaleEmp()"><ion-icon name="add-outline"></ion-icon>Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid *ngFor="let se of newSaleEmployee">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>{{se.saleEmp_ID}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{se.saleEmp_name}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{se.saleEmp_surname}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{se.saleEmp_pos}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

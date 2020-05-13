@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product-type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label for="prodType_desc" position="floating">Product Description</ion-label>
+      <ion-input type="text" id="ProdDesc" name="ProductDescription" [(ngModel)]="newProductType.prodType_desc"></ion-input>
+      <ion-button slot="start" type="submit" (click)="addProductType()"><ion-icon name="add-outline"></ion-icon>Add</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label for="ProdTypeID" position="floating">Product Type ID</ion-label>
+      <ion-input type="text" type="text" id="ProdTypeID" name="ProdTypeID" [(ngModel)]="editProductType.prodType_ID"></ion-input>
+      <br>
+      <ion-label for="ProdDesc" position="floating">Prod desc</ion-label>
+      <ion-input type="text" id="ProdDesc" name="ProductDescriptionN" [(ngModel)]="editProductType.prodType_desc"></ion-input>
+      <ion-button slot="start" type="submit" (click)="updateProductType()"><ion-icon name="add-outline"></ion-icon>Edit</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">ProductTypeID</ion-label>
+      <ion-input type="text" id="ID" name="ID" [(ngModel)]="ID"></ion-input>
+      <ion-button slot="start" type="submit" (click)="deleteProductType()"><ion-icon name="add-outline"></ion-icon>Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid *ngFor="let pt of newProductType">
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-label>{{pt.prodType_desc}}</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-label>{{pt.prodType_ID}}</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
